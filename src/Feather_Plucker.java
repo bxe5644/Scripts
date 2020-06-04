@@ -9,9 +9,7 @@ public class Feather_Plucker extends Script {
 
     @Override
     public void onStart() {
-
         //Code here will execute before the loop is started
-
     }
 
     @Override
