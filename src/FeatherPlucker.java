@@ -8,15 +8,15 @@ import java.text.DecimalFormat;
 
 @ScriptManifest(name = "Feather Plucker", author = "Mascomorg", version = 1.0, info = "", logo = "")
 
-public class Feather_Plucker extends Script {
+public class FeatherPlucker extends Script {
 
     //Skill Variables
-    private final Skill attack = Skill.ATTACK;
-    private final Skill ranged = Skill.RANGED;
-    private final Skill defence = Skill.DEFENCE;
-    private final Skill health = Skill.HITPOINTS;
-    private final Skill strength = Skill.STRENGTH;
-    private final Skill prayer = Skill.PRAYER;
+    private static final Skill attack = Skill.ATTACK;
+    private static final Skill ranged = Skill.RANGED;
+    private static final Skill defence = Skill.DEFENCE;
+    private static final Skill health = Skill.HITPOINTS;
+    private static final Skill strength = Skill.STRENGTH;
+    private static final Skill prayer = Skill.PRAYER;
 
     //Paint variables
     private long startTime;
@@ -104,8 +104,8 @@ public class Feather_Plucker extends Script {
      */
     public String formatExp(long experience) {
         DecimalFormat decimalFormat = new DecimalFormat("###,###");
-        String exp = decimalFormat.format(experience);
-        return exp;
+        return decimalFormat.format(experience);
+
     }
 
     /**
@@ -114,7 +114,9 @@ public class Feather_Plucker extends Script {
      * @return run-time with legible formatting
      */
     public String formatTime(long ms){
-        long s = ms / 1000, m = s / 60, h = m / 60;
+        long s = ms / 1000;
+        long m = s / 60;
+        long h = m / 60;
         s %= 60; m %= 60; h %= 24;
         return String.format("%02d:%02d:%02d", h, m, s);
     }
