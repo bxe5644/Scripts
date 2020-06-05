@@ -1,3 +1,4 @@
+import org.osbot.rs07.api.map.Position;
 import org.osbot.rs07.api.model.NPC;
 import org.osbot.rs07.api.ui.Skill;
 import org.osbot.rs07.script.Script;
@@ -23,7 +24,7 @@ public class FeatherPlucker extends Script {
     private int killCount;
     private int featherCount;
 
-    private NPC chicken;
+    private NPC chicken = null;
 
 
     @Override
@@ -56,9 +57,36 @@ public class FeatherPlucker extends Script {
 
     @Override
     public int onLoop() {
-
+        //Check if player is within the combat area
+        if(myPlayer().getPosition().distance(new Position(3230,3297,0)) > 25) {
+            //Check if player is in combat, if not, look for a fight, else wait
+            if(myPlayer().getAnimation() == -1 && !myPlayer().isUnderAttack()) {
+                log("Looking for a chicken to fight.");
+                chicken = getNpcs().closest(npc -> npc.getName().equals("Chicken") && npc.getInteracting() == null
+                        && !npc.isUnderAttack() && npc.getHealthPercent() != 0 && map.canReach(npc));
+                if(chicken != null) {
+                    if(!chicken.isVisible()) {
+                        log("Facing target.");
+                        camera.toEntity(chicken);
+                    }
+                    log("Attacking chicken.");
+                    chicken.interact("Attack");
+                    mouse.moveOutsideScreen();
+                    Timing.waitCondition(()-> (!chicken.exists()), 100, 1000);
+                } else {
+                    return random(1500);
+                }
+            } else {
+                Timing.waitCondition(()-> !chicken.exists(), 100, 1500);
+                if(!chicken.exists()) {
+                    killCount++;
+                }
+            }
+        } else {
+            log("Walking to the combat area.");
+            walking.walk(new Position(3230, 3297, 0));
+        }
         return 100; //The amount of time in milliseconds before the loop starts over
-
     }
 
     @Override
