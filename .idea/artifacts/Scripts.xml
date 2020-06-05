@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Scripts">
+    <output-path>$PROJECT_DIR$/out/artifacts/Scripts</output-path>
+    <root id="archive" name="Scripts.jar">
+      <element id="module-output" name="Scripts" />
+      <element id="library" level="project" name="osbot 2.5.83" />
+    </root>
+  </artifact>
+</component>
