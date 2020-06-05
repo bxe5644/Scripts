@@ -52,7 +52,7 @@ public class FeatherPlucker extends Script {
     @Override
     public void onExit() {
         log("Thank-you for using Feather Plucker!");
-        System.exit(0);
+        this.stop();
     }
 
     @Override
