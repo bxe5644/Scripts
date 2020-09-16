@@ -13,3 +13,5 @@ D
 src/GUI.java,a\9\a955052fd27abea410b6be4d4e0bf0624a8bc8e2
 C
 src/Overfished.java,3\e\3e559336dbb6a5a41baf70cb230f20ba294eef2c
+P
+ .idea/libraries/OSBot_2_5_87.xml,4\3\434bcc1c7c1b12a906807d30eec1a103d450421f
