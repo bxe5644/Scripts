@@ -1,7 +1,5 @@
 
-0
-java:S1220""Move this file to a named package.
-W
-java:S1118":Add a private constructor to hide the implicit public one.(æõĞÓ8Õ¢­°¨.
-E
-java:S1148I"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Õ¢­°¨.
+P
+java:S1118":Add a private constructor to hide the implicit public one.(æõĞÓ
+7
+java:S1220""Move this file to a named package.8óÙ¨É.

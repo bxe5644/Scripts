@@ -1,9 +1,23 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Scripts">
-    <output-path>$PROJECT_DIR$/out/artifacts/Scripts</output-path>
-    <root id="archive" name="Scripts.jar">
-      <element id="module-output" name="Scripts" />
-      <element id="library" level="project" name="osbot 2.5.83" />
+  <artifact type="javafx" build-on-make="true" name="Scripts">
+    <output-path>$USER_HOME$/OSBot/Scripts</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="scripts.Overfished.Initialization" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Scripts.jar">
+        <element id="module-output" name="Scripts" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>
