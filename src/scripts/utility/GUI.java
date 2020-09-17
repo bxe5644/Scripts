@@ -1,3 +1,5 @@
+package scripts.utility;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,13 +12,11 @@ public class GUI {
     private final JCheckBox jCheckBoxBank;
     private final JCheckBox jCheckBoxDrop;
 
-    private boolean started;
-
     public GUI() {
         jDialog = new JDialog();
         jDialog.setModal(true);
         jDialog.setResizable(false);
-        jDialog.setTitle("Overfished");
+        jDialog.setTitle("scripts.Overfished");
         jDialog.setSize(300, 400);
         jDialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
 
@@ -85,7 +85,6 @@ public class GUI {
         });
 
         buttonStart.addActionListener(e-> {
-            started = true;
             close();
         });
     }
@@ -100,10 +99,6 @@ public class GUI {
 
     public boolean isBanking() {
         return jCheckBoxBank.isSelected();
-    }
-
-    public boolean isStarted() {
-        return started;
     }
 
     public void open() {

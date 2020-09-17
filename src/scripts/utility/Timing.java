@@ -1,3 +1,5 @@
+package scripts.utility;
+
 import java.util.function.BooleanSupplier;
 import java.util.concurrent.TimeUnit;
 
