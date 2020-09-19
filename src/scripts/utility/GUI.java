@@ -84,9 +84,9 @@ public class GUI {
             }
         });
 
-        buttonStart.addActionListener(e-> {
-            close();
-        });
+        buttonStart.addActionListener(e->
+            close()
+        );
     }
 
     public String getFishingLocation() {
